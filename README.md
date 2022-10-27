@@ -1,4 +1,8 @@
 ## udemy Laravel講座
+下記URL講座をもとに作成。
+パスワードリセットのメール送信やアイコン追加など微カスタマイズしています。
+
+https://www.udemy.com/course/laravel-multi-ec/
 
 ## ダウンロード方法
 
@@ -75,4 +79,69 @@ storage/app/public/shopsフォルダを作成し
 メール処理には時間がかかるので、 キューを使用しています。
 必要な場合は php artisan queue:workで ワーカーを立ち上げて動作確認するようにしてください。
 (講座内で解説しています)
-tes
+
+## 下記コーディングを進めていく中でのエラー抜粋
+
+エラー↓
+php artisan migrate実行時
+Illuminate\Database\QueryExceptionと表示
+解決策
+my.iniのポート番号と.envのDB_PORTをあわせる
+php.iniのextension=pdo_mysqlを有効化する
+
+エラー↓
+php artisan tinker 実行時
+file_exists(): Unable to find the wrapper "hoa" - did you forget to enable it when you configured PHP?と表示
+解決策
+ConsoleTput.phpの$paths[] = 'hoa://Library/Terminfo';を無効化する
+
+いきなりgitが使えなくなった - 2022
+https://www.nda.co.jp/memo/git_safe_directory/
+
+エラー↓
+gitのクローンダウンロード後artisanコマンド使えない
+解決策
+composer install
+
+エラー↓
+php artisan serve 500エラー
+解決策
+.envがないのでコピーしてくる
+
+エラー↓
+git ブランチが確認できない
+解決策
+リポジトリのメインをクローンして
+サンプル:git clone git@github.com://リポジトリ名//mokori4242/laravel_umarche.git
+
+「git branch -a」でブランチを確認後
+
+必要なブランチにチェックアウトする
+git checkout -b //ブランチ名//sec05_logoSetting //リモートのブランチの場所//origin/sec05_logoSetting
+
+git checkout -b sec05_resourceController origin/sec05_resourceController
+
+※クローン後はシンボリックリンクが解除されているので再度シンボリックリンク作成
+
+エラー↓
+git add 時にwaning.CRLF変換させない
+解決策
+git config --global core.autoCRLF false
+
+エラー↓
+grepコマンドがwindowsでは使えない
+解決策
+findstrを代わりに使う
+
+エラー↓
+npm run dev か nmp run prodした際のエラー
+
+  WARNING in ./resources/css/app.css (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].use[2]!./resources/css/app.css)
+  Module Warning (from ./node_modules/postcss-loader/dist/cjs.js):
+  Warning
+
+  (4:1) postcss-import: @import must precede all other statements (besides @charset)
+解決策
+https://biz.addisteria.com/error_child_compilations/#toc2
+
+新規cssをresouce/css/app.cssの中の先頭にする

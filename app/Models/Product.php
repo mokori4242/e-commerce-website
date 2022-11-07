@@ -118,6 +118,7 @@ class Product extends Model
     {
         if(!is_null($keyword))
         {
+
             //全角スペースを半角に
             $spaceConvert = mb_convert_kana($keyword,'s');
 
@@ -127,8 +128,26 @@ class Product extends Model
             //単語をループで回す
             foreach($keywords as $word)
             {
-                $query->where('products.name','like','%'.$word.'%');
+                $query->where('products.name','like','%'.$word.'%')
+                    ->orWhere('secondary_categories.name','like','%'.$word.'%');
+                
             }
+        
+
+
+            // if ($query->exists()) {
+            //     return $query;
+            //     echo 'oooo';
+
+            // } else {
+            //     foreach($keywords as $word)
+            //     {
+            //         $query->where('secondary_categories.name','like','%'.$word.'%');
+            //     }
+            //     return $query;
+
+            //     echo 'yahoo';
+            // }
 
             return $query;
 

@@ -48,8 +48,10 @@ class ItemController extends Controller
         ->sortOrder($request->sort)
         ->paginate($request->pagination ?? '20');
 
+        $keywords = $request->keyword;
+
         return view('user.index',
-         compact('products', 'categories'));
+         compact('products', 'categories', 'keywords'));
     }
 
     public function show($id)

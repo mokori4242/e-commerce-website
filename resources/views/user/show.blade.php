@@ -60,7 +60,7 @@
                         <div class="md:w-1/2 ml-4">
                             <h2 class="mb-4 text-sm title-font text-gray-500 tracking-widest">{{ $product->category->name }}</h2>
                             <h1 class="mb-4 text-gray-900 text-3xl title-font font-medium">{{ $product->name }}</h1>
-                            <p class="mb-4 leading-relaxed">{{ $product->infomation }}</p>
+                            <p class="mb-4 leading-relaxed">{!! $product->infomation !!} </p>
                             <div class="flex justify-around items-center">
                                 <div>
                                     <span class="title-font font-medium text-2xl text-gray-900">{{ number_format($product->price) }}</span><span class="text-sm text-gray-700">円(税込)</span>
@@ -116,8 +116,8 @@
         </div>
     </div>
     <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <div class="modal__overlay z-10" tabindex="-1" data-micromodal-close>
+            <div class="modal__container z-50" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
                 <header class="modal__header">
                 <h2 class="text-xl text-gray-700" id="modal-1-title">
                     {{ $product->shop->name }}

@@ -24,7 +24,7 @@
                                 <div class="p-2 w-1/2 mx-auto">
                                     <div class="relative">
                                         <label for="infomation" class="leading-7 text-sm text-gray-600">商品情報 ※必須</label>
-                                        <textarea id="infomation" name="infomation" rows="10" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">{{ $product->infomation }}</textarea>
+                                        <textarea id="infomation" name="infomation" rows="10" required class="ckeditor w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-green-500 focus:bg-white focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">{{ $product->infomation }}</textarea>
                                     </div>
                                 </div>
                                 <div class="p-2 w-1/2 mx-auto">
@@ -138,4 +138,5 @@
         }
     }
     </script>
+        <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 </x-app-layout>

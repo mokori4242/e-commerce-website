@@ -1,16 +1,15 @@
 ## udemy Laravel講座
 下記URL講座をもとに作成。
-パスワードリセットのメール送信やアイコン追加など微カスタマイズしています。
 
 https://www.udemy.com/course/laravel-multi-ec/
 
 ## ダウンロード方法
 
 git clone
-git clone https://github.com/mokori4242/laravel_umarche.git
+git clone https://github.com/mokori4242/e-commerce-website.git
 
 git clone ブランチを指定してダウンロードする場合
-git clone -b ブランチ名 https://github.com/mokori4242/laravel_umarche.git
+git clone -b ブランチ名 https://github.com/mokori4242/e-commerce-website.git
 
 もしくはzipファイルでダウンロードしてください。
 
@@ -63,22 +62,6 @@ storage/app/public/productsフォルダ内に
 ショップの画像も表示する場合は、
 storage/app/public/shopsフォルダを作成し
 画像を保存してください。
-
-## section7の補足
-
-決済のテストとしてstripeを利用しています。
-必要な場合は .env にstripeの情報を追記してください。
-(講座内で解説しています)
-
-## section8の補足
-
-メールのテストとしてmailtrapを利用しています。 
-必要な場合は .env にmailtrapの情報を追記してください。 
-(講座内で解説しています)
-
-メール処理には時間がかかるので、 キューを使用しています。
-必要な場合は php artisan queue:workで ワーカーを立ち上げて動作確認するようにしてください。
-(講座内で解説しています)
 
 ## 下記コーディングを進めていく中でのエラー抜粋
 

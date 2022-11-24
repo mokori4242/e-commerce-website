@@ -63,7 +63,7 @@ storage/app/public/productsフォルダ内に
 storage/app/public/shopsフォルダを作成し
 画像を保存してください。
 
-## 下記コーディングを進めていく中でのエラー抜粋
+## 下記、進めていく中でのエラー抜粋
 
 エラー↓
 php artisan migrate実行時
@@ -95,14 +95,12 @@ php artisan serve 500エラー
 git ブランチが確認できない
 解決策
 リポジトリのメインをクローンして
-サンプル:git clone git@github.com://リポジトリ名//mokori4242/laravel_umarche.git
+サンプル:git clone git@github.com:リポジトリ名 ユーザー名/リポジトリ名
 
 「git branch -a」でブランチを確認後
 
 必要なブランチにチェックアウトする
-git checkout -b //ブランチ名//sec05_logoSetting //リモートのブランチの場所//origin/sec05_logoSetting
-
-git checkout -b sec05_resourceController origin/sec05_resourceController
+git checkout -b ブランチ名->例:sec05_logoSetting リモートのブランチの場所->例:origin/sec05_logoSetting
 
 ※クローン後はシンボリックリンクが解除されているので再度シンボリックリンク作成
 
@@ -110,6 +108,7 @@ git checkout -b sec05_resourceController origin/sec05_resourceController
 git add 時にwaning.CRLF変換させない
 解決策
 git config --global core.autoCRLF false
+※次回から設定をLF指定しておけば良い
 
 エラー↓
 grepコマンドがwindowsでは使えない

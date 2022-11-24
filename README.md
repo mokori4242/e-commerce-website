@@ -108,6 +108,7 @@ git checkout -b ブランチ名->例:sec05_logoSetting リモートのブラン�
 git add 時にwaning.CRLF変換させない
 解決策
 git config --global core.autoCRLF false
+※次回から設定をLF指定しておけば良い
 
 エラー↓
 grepコマンドがwindowsでは使えない
